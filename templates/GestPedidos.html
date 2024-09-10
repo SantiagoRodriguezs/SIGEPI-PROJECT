@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../../inicio.html">Servicio al Cliente</a></li>
+            </ul>
+            <input type="checkbox" id="check" style="display: none;">
+        <label for="check" class="bar-btn">
+            <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
+        </label>
+       
+        </nav>
+        <ul class="nav-menu">
+            <li><button class="nav-btn">Registrar Pedidos</button></li>
+            <li><button class="nav-btn">Gestionar Pedidos</button></li>
+            <li><button class="nav-btn">Salir</button></li>
+        </ul>        
+    </header>
+    <div class="container">
+        <h1>SOLICITUDES</h1>
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <span>CLIENTE</span>
+                    <p>CEMEX</p>
+                </div>
+                <div>
+                    <span>LOCACION DE ENTREGA</span>
+                    <p>CLL 64 #89 S</p>
+                </div>
+                <div>
+                    <span>FECHA DE ENTREGA</span>
+                    <p>06-02-2024<br>8:00 AM</p>
+                </div>
+            </div>
+            <button class="edit-button" onclick="redirigir()">EDITAR DETALLES</button>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <span>CLIENTE</span>
+                    <p>POSTOBON</p>
+                </div>
+                <div>
+                    <span>LOCACION DE ENTREGA</span>
+                    <p>CLL 64 #89 S</p>
+                </div>
+                <div>
+                    <span>FECHA DE ENTREGA</span>
+                    <p>06-02-2024<br>8:00 AM</p>
+                </div>
+            </div>
+            <button class="edit-button" onclick="redirigir()">EDITAR DETALLES</button>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <span>CLIENTE</span>
+                    <p>COCA-COLA</p>
+                </div>
+                <div>
+                    <span>LOCACION DE ENTREGA</span>
+                    <p>CLL 64 #89 S</p>
+                </div>
+                <div>
+                    <span>FECHA DE ENTREGA</span>
+                    <p>06-02-2024<br>8:00 AM</p>
+                </div>
+            </div>
+            <button class="edit-button" onclick="redirigir()">EDITAR DETALLES</button>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <span>CLIENTE</span>
+                    <p>ENERGI</p>
+                </div>
+                <div>
+                    <span>LOCACION DE ENTREGA</span>
+                    <p>CLL 64 #89 S</p>
+                </div>
+                <div>
+                    <span>FECHA DE ENTREGA</span>
+                    <p>06-02-2024<br>8:00 AM</p>
+                </div>
+            </div>
+            <button class="edit-button" onclick="redirigir()">EDITAR DETALLES</button>
+        </div>
+    </div>
+
+    <!-- Script para redirección -->
+    <script>
+        function redirigir() {
+            location.href = '../EPedidos/EPedidos.html'; // Cambia a la URL deseada
+        }
+    </script>
+</body>
+</html>

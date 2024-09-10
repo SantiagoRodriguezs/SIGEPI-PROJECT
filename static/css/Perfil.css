@@ -1,0 +1,198 @@
+/* Estilos generales para el body */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: #CFE7D3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.header {
+    background-color: #B0BDB7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Estilo para el logo */
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para los enlaces de navegación */
+.header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2F9553;
+    text-decoration: none;
+}
+
+/* Estilo para el ícono del menú hamburguesa */
+.bar-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+    transition: opacity 0.3s;
+    position: absolute;
+    right: 10px;
+}
+
+/* Estilos para el menú desplegable */
+.nav-menu {
+    position: absolute;
+    border-radius: 20px;
+    top: 100%;
+    right: 10px;
+    width: 250px;
+    background-color: #B0BDB7;
+    list-style: none;
+    padding: 20px;
+    margin: 10px 0;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Muestra el menú cuando el checkbox está marcado */
+#check:checked~.nav-menu {
+    transform: scale(1);
+}
+
+/* Estilo para los botones del menú */
+.nav-menu li {
+    padding: 5px 0;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #228B4A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 80px;
+}
+
+/* Ajustes para el contenedor principal */
+.container {
+    margin-top: 80px;
+    width: 70%;
+    max-width: 800px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para el contenedor del perfil */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B0BDB7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen del perfil */
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los datos del perfil */
+.profile-data {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón "Editar perfil" */
+.edit-profile-button {
+    background-color: #2F9553;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+    background-color: #247d44;
+}

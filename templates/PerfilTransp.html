@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportador Perfil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+</head>
+<body><header>
+    <!-- Contenedor del header -->
+    <div class="header-container">
+        <!-- Contenedor del logo -->
+        <a href="../Inicio.html" class="logo-link">
+            <!-- Contenedor del logo -->
+            <div class="logo-container">
+                <img src="../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+            </div>
+        </a>
+        <h1>TRANSPORTADOR</h1>
+        <!-- Contenedor del menú -->
+        <div class="menu-button-container">
+            <button class="menu-button">&#9776;</button>
+            <div class="dropdown-menu">
+                <a href="../Historial/historial.html" class="dropdown-item">Consultar historial</a>
+                <a href="../ConsultarRuta/Consultar.html" class="dropdown-item">Consultar ruta</a>
+                <a href="../Perfil/Perfil.html" class="dropdown-item">Mi perfil</a>
+                <a href="../../../index.html" class="dropdown-item">Salir</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Contenedor principal -->
+<div class="container">
+    <main>
+        <div class="profile-container">
+            <!-- Contenedor de perfil -->
+            <div class="profile-image">
+                <img src="../../../img/ImagenPerfil.png" alt="Perfil">
+            </div>
+            <div class="profile-data">
+                <p><strong>Nombre:</strong> Juan Pérez</p>
+                <p><strong>Apellidos:</strong> Pérez Gómez</p>
+                <p><strong>Fecha de nacimiento:</strong> 01/01/1980</p>
+                <p><strong>Número de identificación:</strong> 123456789</p>
+                <p><strong>Email:</strong> juan.perez@example.com</p>
+                <p><strong>Teléfono:</strong> 3111234567</p>
+                <p><strong>Contraseña:</strong> *********</p>
+                </div>
+                <button type="button" class="edit-profile-button" onclick="window.location.href='./EditarPerfil/Editar.html'">Editar perfil</button>
+
+
+        </div>
+    </main>
+</div>
+
+<!-- Icono de regresar -->
+<a href="../Inicio.html" class="regresar">
+    <img src="../../../img/Regresar.png" alt="Regresar">
+</a>
+
+
+<!-- Campana de notificaciones -->
+<div class="notification-bell" onclick="toggleNotificationBox()">
+    <img src="../../../img/Notificaciones.png" alt="Notificaciones">
+</div>
+
+<!-- Cuadro de historial de notificaciones -->
+<div class="notification-box" id="notificationBox">
+    <ul>
+        <li><a href="notificacion.html">Notificación 1</a></li>
+        <li><a href="notificacion.html">Notificación 2</a></li>
+        <li><a href="notificacion.html">Notificación 3</a></li>
+    </ul>
+</div>
+
+<script>
+
+
+    
+function toggleNotificationBox() {
+    var notificationBox = document.getElementById('notificationBox');
+    var bell = document.querySelector('.notification-bell img');
+    
+    // Alternar visibilidad del cuadro de notificaciones
+    if (notificationBox.style.display === 'none' || notificationBox.style.display === '') {
+        notificationBox.style.display = 'block';
+        bell.style.transform = 'scale(1.2)'; // Aumentar tamaño de la campana
+    } else {
+        notificationBox.style.display = 'none';
+        bell.style.transform = 'scale(1)'; // Restaurar tamaño de la campana
+    }
+}
+</script>
+
+</body>
+</html>

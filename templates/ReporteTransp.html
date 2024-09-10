@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportador Reporte</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+</head>
+<body>
+<header>
+    <!-- Contenedor del header -->
+    <div class="header-container">
+        <!-- Contenedor del logo -->
+        <a href="../../Inicio.html" class="logo-link">
+            <!-- Contenedor del logo -->
+            <div class="logo-container">
+                <img src="../../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+            </div>
+        </a>
+        <h1>TRANSPORTADOR</h1>
+        <!-- Contenedor del menú -->
+        <div class="menu-button-container">
+            <button class="menu-button">&#9776;</button>
+            <div class="dropdown-menu">
+                <a href="../../Historial/historial.html" class="dropdown-item">Consultar historial</a>
+                <a href="../Consultar.html" class="dropdown-item">Consultar ruta</a>
+                <a href="../../Perfil/Perfil.html" class="dropdown-item">Mi perfil</a>
+                <a href="../../../../index.html" class="dropdown-item">Salir</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenedor principal -->
+<div class="container">
+    <!-- Sección de reporte -->
+    <div class="report-section">
+        <h2 class="report-title">Reporte</h2>
+        <div class="report-container">
+            <div>
+            <!-- Área de texto para que los usuarios escriban -->
+            <textarea class="input-content" rows="4" placeholder="Escribe aquí tu reporte..."></textarea>
+            </div>
+
+
+        </div>
+        
+        
+    </div>
+
+<!-- Contenedor de botones -->
+<div class="button-container">
+    <input type="file" id="addPhotoButton" class="add-photo-button" accept="image/*" style="display: none;">
+    <label for="addPhotoButton" class="add-photo-button-label">
+        Adjuntar Fotos
+    </label>
+
+    <a href="../Consultar.html" id="sendReportButton" class="send-message-button">
+        Enviar Reporte
+    </a>
+
+
+</div>
+
+
+<div id="customAlert" class="custom-alert">
+    <div class="alert-content">
+        <p>¿Está seguro de que desea enviar el reporte?</p>
+        <button onclick="confirmAction(true)">Sí</button>
+        <button onclick="confirmAction(false)">No</button>
+    </div>
+</div>
+<script>
+// Obtener el botón de "Enviar Reporte"
+const sendReportButton = document.getElementById('sendReportButton');
+
+// Asignar un evento al botón
+sendReportButton.addEventListener('click', function(event) {
+    // Prevenir la acción por defecto (navegar a otra página)
+    event.preventDefault();
+    // Mostrar el cuadro de diálogo personalizado
+    document.getElementById('customAlert').style.display = 'block';
+});
+
+function confirmAction(isConfirmed) {
+    if (isConfirmed) {
+        window.location.href = '../Consultar.html'; // Redirige al usuario
+    }
+    // Ocultar el cuadro de diálogo personalizado
+    document.getElementById('customAlert').style.display = 'none';
+}
+</script>
+
+<!-- Contenedor principal para el mensaje y el ícono -->
+<div class="message-wrapper">
+
+        <!-- Contenido estático del reporte -->
+        <div class="static-content">
+            INSTRUCCIONES: **********************************************************************************
+            *********************************************************************************************************
+
+        </div>    
+</div>
+
+<!-- Icono de regresar -->
+<a href="../Consultar.html" class="regresar">
+    <img src="../../../../img/Regresar.png" alt="Regresar">
+</a>
+
+
+<!-- Campana de notificaciones -->
+<div class="notification-bell" onclick="toggleNotificationBox()">
+    <img src="../../../../img/Notificaciones.png" alt="Notificaciones">
+</div>
+
+<!-- Cuadro de historial de notificaciones -->
+<div class="notification-box" id="notificationBox">
+    <ul>
+        <li><a href="notificacion.html">Notificación 1</a></li>
+        <li><a href="notificacion.html">Notificación 2</a></li>
+        <li><a href="notificacion.html">Notificación 3</a></li>
+    </ul>
+</div>
+
+<script>
+
+
+    
+function toggleNotificationBox() {
+    var notificationBox = document.getElementById('notificationBox');
+    var bell = document.querySelector('.notification-bell img');
+    
+    // Alternar visibilidad del cuadro de notificaciones
+    if (notificationBox.style.display === 'none' || notificationBox.style.display === '') {
+        notificationBox.style.display = 'block';
+        bell.style.transform = 'scale(1.2)'; // Aumentar tamaño de la campana
+    } else {
+        notificationBox.style.display = 'none';
+        bell.style.transform = 'scale(1)'; // Restaurar tamaño de la campana
+    }
+}
+</script>
+
+</div>
+</body>
+</html>

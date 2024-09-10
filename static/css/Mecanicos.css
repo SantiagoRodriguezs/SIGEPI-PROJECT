@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: #CFE7D3;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color: #B0BDB7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 10%;
+    width: 100%;
+    position: relative; /* Asegura que el menú se posicione correctamente en relación con el header */
+}
+
+/* Estilo para el logo */
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para los enlaces de navegación */
+.header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2F9553;
+    text-decoration: none;
+}
+
+/* Estilo para el ícono del menú hamburguesa */
+.bar-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+    transition: opacity 0.3s;
+    position: absolute;
+    right: 10px;
+}
+
+/* Estilos para el menú desplegable */
+.nav-menu {
+    display: none;
+    position: absolute;
+    border-radius: 20px;
+    top: 100%;
+    right: 10px;
+    width: 250px;
+    background-color: #B0BDB7;
+    list-style: none;
+    padding: 20px;
+    margin: 10px 0;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Muestra el menú cuando el checkbox está marcado */
+#check:checked + .bar-btn + .nav-menu {
+    display: block;
+    transform: scale(1);
+}
+
+/* Estilo para los botones del menú */
+.nav-menu li {
+    padding: 5px 0;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #228B4A;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    background-color: #d1e7dd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.vehicle-item-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.vehicle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #c3e6cb;
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 10px;
+}
+
+.vehicle-item div {
+    flex: 1;
+    text-align: center;
+}
+
+.vehicle-item div span {
+    display: block;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.vehicle-item div p {
+    margin: 5px 0;
+    color: #000;
+}
+
+.button-container {
+    flex: 0 0 150px;
+    text-align: center;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.button-container button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .vehicle-item-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .vehicle-item {
+        padding: 15px;
+    }
+
+    .vehicle-item div span {
+        font-size: 14px;
+    }
+
+    .vehicle-item div p {
+        font-size: 14px;
+    }
+
+    .button-container {
+        margin-left: 0;
+        margin-top: 10px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .button-container button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perdil</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+</head>
+<body>
+<header>
+    <!-- Contenedor del header -->
+    <div class="header-container">
+        <!-- Contenedor del logo -->
+        <a href="../../../index.html" class="logo-link">
+            <!-- Contenedor del logo -->
+            <div class="logo-container">
+                <img src="../../../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+            </div>
+        </a>
+        <h1>Administrador</h1>
+        <!-- Contenedor del menú -->
+        <div class="menu-button-container">
+            <button class="menu-button">&#9776;</button>
+            <div class="dropdown-menu">
+                <a href="../../AgUsuarios/AgUsuarios.html" class="dropdown-item">AGREGAR USUARIOS</a>
+                <a href="../../LUsuarios/LUsuarios.html" class="dropdown-item">LIST. USUARIOS</a>
+                <a href="../../AVehiculos/AVehiculos.html" class="dropdown-item">AGREGAR VEHICULOS</a>
+                <a href="../../ATrailers/ATrailers.html" class="dropdown-item">AGREGAR TRAILERS</a>
+                <a href="../Perfil.html" class="dropdown-item">PERFIL</a>
+                <a href="../../../../../index.html" class="dropdown-item">Salir</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Contenedor principal -->
+<div class="container">
+    <main>
+        <div class="profile-container">
+            <!-- Contenedor de perfil -->
+            <form id="profileForm" action="/submit-profile" method="POST" class="profile-form">
+                <div class="profile-image">
+                    <img src="../../../../../img/ImagenPerfil.png" alt="Perfil">
+                </div>
+                <div class="profile-data">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="" required>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" value="" required>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" placeholder="Fecha de nacimiento" value="" required>
+                    <input type="text" id="identificacion" name="identificacion" placeholder="Número de identificación" value="" required>
+                    <input type="email" id="email" name="email" placeholder="Email" value="" required>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" value="" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" value="" required>
+                </div>
+                <button type="button" class="edit-profile-button" onclick="confirmGuardarCambios()">Guardar cambios</button>
+            </form>
+        </div>
+    </main>
+</div>
+
+<!-- Ventana de confirmación -->
+<div id="confirmationMessage" class="confirmation-dialog" style="display: none;">
+    <div class="confirmation-content">
+        <p id="confirmationText">¿Está seguro de que desea realizar esta acción?</p>
+        <div class="button-container">
+            <button onclick="confirmAction()">Sí</button>
+            <button onclick="closeConfirmation()">No</button>
+        </div>
+    </div>
+</div>
+<script>
+    // Función para alternar la visibilidad del cuadro de notificaciones
+    function toggleNotificationBox() {
+        var notificationBox = document.getElementById('notificationBox');
+        var bell = document.querySelector('.notification-bell img');
+        
+        if (notificationBox.style.display === 'none' || notificationBox.style.display === '') {
+            notificationBox.style.display = 'block';
+            bell.style.transform = 'scale(1.2)'; // Aumentar tamaño de la campana
+        } else {
+            notificationBox.style.display = 'none';
+            bell.style.transform = 'scale(1)'; // Restaurar tamaño de la campana
+        }
+    }
+
+    // Función para confirmar la acción de programar itinerario
+    function confirmProgramarItinerario() {
+        var form = document.getElementById('profileForm');
+        var isValid = form.checkValidity();
+        if (isValid) {
+            document.getElementById('confirmationText').innerText = '¿Está seguro de que desea programar el itinerario?';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('confirmationMessage').dataset.action = 'programar';
+        } else {
+            alert('Por favor, complete todos los campos.');
+        }
+    }
+
+    // Función para confirmar la acción de guardar cambios
+    function confirmGuardarCambios() {
+        document.getElementById('confirmationText').innerText = '¿Está seguro de que desea guardar los cambios?';
+        document.getElementById('confirmationMessage').style.display = 'block';
+        document.getElementById('confirmationMessage').dataset.action = 'guardar';
+    }
+
+    // Función para realizar la acción según la confirmación
+    function confirmAction() {
+        var action = document.getElementById('confirmationMessage').dataset.action;
+        if (action === 'programar') {
+            document.getElementById('profileForm').submit();
+        } else if (action === 'guardar') {
+            // Redirige al usuario a una página específica
+            window.location.href = '../Perfil.html';
+        }
+    }
+
+    // Función para cerrar el cuadro de confirmación
+    function closeConfirmation() {
+        document.getElementById('confirmationMessage').style.display = 'none';
+    }
+</script>
+</body>
+</html>

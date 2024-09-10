@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecanico</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
+    <style>
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b0b8b4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .notification h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .notification .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .notification .buttons button {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .notification .buttons .accept {
+            background-color: #28a745;
+        }
+
+        .notification .buttons .reject {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../../inicio.html">Mecanico</a></li>
+            </ul>
+        </nav>
+        <input type="checkbox" id="check" style="display: none;"> 
+        <label for="check" class="bar-btn"> 
+            <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i> 
+        </label>
+        <ul class="nav-menu">
+            <li><button class="nav-btn">List. Vehiculos</button></li>
+            <li><button class="nav-btn">Salir</button></li>
+        </ul>
+    </header>
+    
+    <div class="container">
+        <h1>VEHÍCULOS</h1>
+        <div class="vehicle-item-container">
+            <div class="vehicle-item">
+                <div>
+                    <span>TRANSPORTADOR</span>
+                    <p>JUAN R</p>
+                </div>
+                <div>
+                    <span>FLOTA</span>
+                    <p>CEMEX</p>
+                </div>
+                <div>
+                    <span>VEHICULO</span>
+                    <p>HJT123</p>
+                </div>
+                <div>
+                    <span>ESTADO</span>
+                    <p class="estado">DISPONIBLE</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
+            </div>
+        </div>
+        <div class="vehicle-item-container">
+            <div class="vehicle-item">
+                <div>
+                    <span>TRANSPORTADOR</span>
+                    <p>JUAN R</p>
+                </div>
+                <div>
+                    <span>FLOTA</span>
+                    <p>POSTOBON</p>
+                </div>
+                <div>
+                    <span>VEHICULO</span>
+                    <p>HJT123</p>
+                </div>
+                <div>
+                    <span>ESTADO</span>
+                    <p class="estado">DISPONIBLE</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
+            </div>
+        </div>
+        <div class="vehicle-item-container">
+            <div class="vehicle-item">
+                <div>
+                    <span>TRANSPORTADOR</span>
+                    <p>JUAN R</p>
+                </div>
+                <div>
+                    <span>FLOTA</span>
+                    <p>COCA-COLA</p>
+                </div>
+                <div>
+                    <span>VEHICULO</span>
+                    <p>HJT123</p>
+                </div>
+                <div>
+                    <span>ESTADO</span>
+                    <p class="estado">DISPONIBLE</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
+            </div>
+        </div>
+        <div class="vehicle-item-container">
+            <div class="vehicle-item">
+                <div>
+                    <span>TRANSPORTADOR</span>
+                    <p>JUAN R</p>
+                </div>
+                <div>
+                    <span>FLOTA</span>
+                    <p>ENERGI</p>
+                </div>
+                <div>
+                    <span>VEHICULO</span>
+                    <p>HJT123</p>
+                </div>
+                <div>
+                    <span>ESTADO</span>
+                    <p class="estado">DISPONIBLE</p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="notification" id="notification">
+        <h1>¿Desea cambiar el estado de este vehiculo?</h1>
+        <div class="buttons">
+            <button class="accept" onclick="changeStatus()">ACEPTAR</button>
+            <button class="reject" onclick="hideNotification()">RECHAZAR</button>
+        </div>
+    </div>
+
+    <script>
+        let currentButton;
+
+        function showNotification(button) {
+            currentButton = button;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('notification').style.display = 'block';
+        }
+
+        function hideNotification() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('notification').style.display = 'none';
+        }
+
+        function changeStatus() {
+            const estadoElement = currentButton.closest('.vehicle-item-container').querySelector('.estado');
+            if (estadoElement.textContent === 'DISPONIBLE') {
+                estadoElement.textContent = 'MANTENIMIENTO';
+            } else {
+                estadoElement.textContent = 'DISPONIBLE';
+            }
+            hideNotification();
+        }
+    </script>
+</body>
+
+</html>

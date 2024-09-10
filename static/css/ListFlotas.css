@@ -1,0 +1,380 @@
+/* Estilos generales para el body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #CFE7D3;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    height: 100vh; /* Hace que el body ocupe el 100% del alto de la vista */
+    display: flex;
+    flex-direction: column; /* Cambia la dirección de flex a columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    font-family: 'Poppins', sans-serif; /* Cambia la fuente a Poppins */
+}
+
+/* Estilos para el contenedor del header */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Distribuye el logo y el botón de menú de manera uniforme */
+    align-items: center;
+    background-color: #B0BDB7;
+    z-index: 1000;
+    height: 60px;
+    padding: 0 20px;
+    gap: 40px;
+}
+/* Estilos para el enlace del logo */
+.logo-link {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo dentro del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    margin-right: auto; /* Alinea el logo a la izquierda */
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+    width: 200px; /* Ajusta el tamaño del contenedor del logo */
+    height: 70px; /* Ajusta el tamaño del contenedor del logo */
+    overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del contenedor */
+}
+
+/* Estilos para el logo */
+#imgTeca {
+    width: 100%; /* Ajusta el logo al tamaño máximo del contenedor */
+    height: 100%; /* Ajusta el logo al tamaño máximo del contenedor */
+    object-fit: contain; /* Mantiene la proporción del logo dentro del contenedor */
+    display: block; /* Elimina cualquier espacio adicional alrededor de la imagen */
+}
+
+.header-container h1 {
+    margin: 0; /* Elimina márgenes externos */
+    margin-left: -150px; /* Ajusta el margen izquierdo para mover el título */
+    text-align: left; /* Alinea el texto a la izquierda */
+    width: auto; /* Permite que el ancho se ajuste automáticamente */
+    Color: #2F9553;
+}
+
+
+/* Estilos para el botón del menú */
+.menu-button-container {
+    position: relative;
+    color: black;
+    margin-left: auto; /* Mueve el botón al extremo derecho */
+}
+
+/* Ajuste del tamaño del botón del menú */
+.menu-button {
+    font-size: 30px; /* Tamaño de fuente más grande */
+    cursor: pointer;
+    background-color: transparent; /* Fondo transparente para el botón del menú */
+    border: none; /* Elimina bordes */
+    padding: 15px; /* Aumenta el espacio interno para hacer el botón más grande */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    color: black; /* Color negro para el ícono o texto del botón */
+    display: inline-flex; /* Ajusta el tamaño del botón de acuerdo con el contenido */
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: center; /* Alinea el contenido horizontalmente */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 53px; /* Ajusta la distancia desde el botón */
+    right: 138px; /* Centra el menú en relación al botón */
+    transform: translateX(50%); /* Ajusta la posición horizontalmente */
+    background-color: #B0BDB7; /* Fondo transparente para el menú */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1;
+    width: 220px; /* Ancho ajustado para el menú desplegable */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px 0; /* Padding superior e inferior para espaciar los elementos */
+}
+
+/* Mostrar el menú cuando se pasa el cursor sobre el botón */
+.menu-button-container:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para los elementos del menú desplegable */
+.dropdown-item {
+    display: block;
+    padding: 10px 17px; /* Aumenta el padding para más espacio clicable */
+    text-decoration: none;
+    color: #333;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    background-color: white; /* Fondo blanco para los elementos del menú */
+    border: 1px solid #B0BDB7; /* Bordes grises alrededor de cada elemento */
+    border-radius: 20px; /* Bordes redondeados */
+    margin: 5px 15px; /* Ajusta el margen para espaciar los elementos del menú */
+    text-align: center; /* Centra el texto de los elementos del menú */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para los elementos del menú desplegable al pasar el ratón */
+.dropdown-item:hover {
+    background-color: #E6F4EA;
+    color: #2F9553;
+    cursor: pointer;
+}
+
+/* Estilos para el botón "Pedidos" */
+.header-button {
+    position: fixed; /* Fija el botón en la pantalla */
+    top: 17%; /* Ajusta la posición verticalmente más arriba */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el botón al centro exacto */
+    padding: 20px 30px;
+    background-color: #B0BDB7;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para destacarlo */
+    margin-bottom: 30px; /* Añade un margen inferior para separar del contenedor principal */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    margin-top: 410px; /* Ajusta el margen superior para crear 50px de espacio entre el header y el contenido */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    gap: 20px;
+}
+
+/* Estilos para las secciones dentro del contenedor principal */
+.content-section {
+    background-color: #CFE7D3; /* Color de fondo igual al del body */
+    padding: 5px; /* Espacio interno en la sección */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 5px; /* Espacio entre secciones */
+    position: relative; /* Posicionamiento relativo para los botones de acción */
+}
+
+/* Estilos para el botón "Generar PDF" */
+.generate-pdf-button {
+    display: inline-block;
+    padding: 10px 60px;
+    background-color: #2F9553;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para destacarlo */
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-wrapper {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Alinea el contenido a la izquierda */
+    justify-content: center; /* Centra verticalmente el contenido */
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
+    background-color: #CFE7D3; /* Color de fondo igual al del body */
+    padding: 8px 0; /* Solo relleno vertical */
+    box-sizing: border-box; /* Incluye padding en el ancho y alto total */
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-container {
+    display: grid;
+    width: 900px; /* Ajusta el ancho del contenedor de la tabla */
+    max-width: 100%; /* Elimina cualquier límite de ancho */
+    margin-left: 80px; /* Mueve la tabla completamente a la izquierda */
+    max-width: auto;
+    padding: 10px;
+    box-sizing: border-box; /* Incluye padding en el ancho y alto total */
+    overflow-y: auto; /* Permite desplazamiento vertical si es necesario */
+    border: 2px solid #a7d7a7; /* Color del borde */
+    border-radius: 5px;
+}
+
+/* Estilos para los encabezados y filas de la tabla */
+.table-header, .table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Divide en 4 columnas iguales */
+    gap: 2px; /* Reduce el espacio entre las columnas */
+    justify-items: start; /* Alinea las celdas a la izquierda */
+}
+
+/* Estilos para las celdas */
+.cell {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    word-spacing: 3px; /* Espacio adicional entre palabras */
+    position: relative;
+    flex: 1; /* Permite que cada celda se ajuste a una columna igual */
+}
+
+.table-header .cell {
+    font-weight: bold;
+    color: #2F9553; /* Cambia el color de las letras a verde */
+    background-color: #f1f1f1;
+}
+
+/* Contenedor de los botones de acción */
+.action-buttons-container {
+    position: absolute; /* Permite mover el contenedor de los botones fuera del flujo normal */
+    right: 10px; /* Distancia desde el borde derecho */
+    bottom: 40px; /* Distancia desde el borde inferior */
+    display: grid; /* Utiliza grid para el diseño */
+    grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas iguales */
+    gap: 10px; /* Espacio entre los botones */
+    max-height: 600px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Permite desplazamiento vertical si excede la altura */
+    margin-left: 10px; /* Ajusta la distancia desde el borde izquierdo */
+}
+
+/* Estilos combinados para los botones */
+.button-style, .action-button {
+    display: inline-block; /* Asegura que se comporte como un botón */
+    padding: 12px 25px; /* Reducido para hacer los botones más pequeños */
+    background-color: #2F9553; /* Color de fondo verde personalizado */
+    color: white; /* Texto blanco */
+    text-align: center;
+    text-decoration: none; /* Quita el subrayado */
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 13px; /* Tamaño de fuente más pequeño */
+    transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+/* Efecto al pasar el ratón sobre el botón */
+.button-style:hover, .action-button:hover {
+    background-color: #247d44; /* Tono más oscuro para el hover */
+}
+
+
+/* Estilos para el contenedor de regresar */
+.regresar {
+    position: fixed;
+    bottom: 500px; /* Distancia desde el borde inferior */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    width: 40px; /* Tamaño del contenedor */
+    height: 40px; /* Tamaño del contenedor */
+    background-color: transparent; /* Fondo transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que la campana esté por encima de otros contenidos */
+    border: none; /* Elimina cualquier borde */
+    box-shadow: none; /* Elimina cualquier sombra */
+    padding: 0; /* Elimina el padding extra */
+}
+
+/* Estilos para la imagen */
+.regresar img {
+    width: 40px; /* Tamaño de la imagen ajustado al contenedor */
+    height: 40px; /* Tamaño de la imagen ajustado al contenedor */
+}
+
+
+/* Efecto hover para el icono de regresar */
+.regresar:hover {
+    background-color: transparent; /* Fondo ligeramente oscuro al pasar el cursor */
+}
+
+.regresar:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el cursor */
+}
+
+/* Estilos para la campana de notificaciones */
+.notification-bell {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+    width: 55px; /* Tamaño del círculo */
+    height: 55px; /* Tamaño del círculo */
+    background-color: #B0BDB7; /* Fondo del círculo */
+    border-radius: 50%; /* Hace el contenedor circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que la campana esté por encima de otros contenidos */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+/* Estilos para la imagen de la campana */
+.notification-bell img {
+    width: 60%;
+    height: 60%;
+    transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+/* Estilos para el cuadro de historial de notificaciones */
+.notification-box {
+    position: fixed;
+    bottom: 85px; /* Ajusta la distancia desde el borde inferior */
+    left: 20px; /* Alinea con la campana */
+    width: 300px; /* Ancho ajustado para más espacio */
+    max-height: 400px; /* Altura máxima para más contenido */
+    background-color: #B0BDB7; /* Color de fondo blanco */
+    border: 1px solid #ddd; /* Color del borde */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    display: none; /* Oculto por defecto */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    z-index: 1001; /* Asegura que esté por encima de otros contenidos */
+    padding: 20px; /* Aumenta el padding para mejor espaciado interno */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Transición de visibilidad */
+.notification-box.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification-box.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Estilos para la lista de notificaciones */
+.notification-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #2F9553; /* Fondo del cuadro de notificaciones */
+    border-radius: 8px; /* Bordes redondeados para la lista */
+}
+
+/* Estilos para los elementos de la lista */
+.notification-box ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Color del borde más suave */
+    transition: background-color 0.3s ease; /* Transición para el fondo */
+}
+
+/* Efecto hover para el elemento de la lista */
+.notification-box ul li:hover {
+    background-color: #319253; /* Fondo gris claro en hover */
+}
+
+/* Elimina el borde en el último elemento */
+.notification-box ul li:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para los enlaces dentro de la lista */
+.notification-box ul li a {
+    text-decoration: none;
+    color: white;
+    display: block; /* Asegura que el área clicable sea el 100% del elemento */
+    font-size: 15px; /* Ajusta el tamaño de la fuente */
+}
+
+/* Efecto hover para los enlaces */
+.notification-box ul li a:hover {
+    text-decoration: underline;
+}

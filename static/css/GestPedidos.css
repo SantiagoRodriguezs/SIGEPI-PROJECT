@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: #CFE7D3;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color: #B0BDB7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 10%;
+    width: 100%;
+}
+
+/* Estilo para el logo */
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para los enlaces de navegación */
+.header nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2F9553;
+    text-decoration: none;
+}
+
+/* Estilo para el ícono del menú hamburguesa */
+.bar-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    z-index: 10;
+    transition: opacity 0.3s;
+    position: absolute;
+    right: 10px;
+}
+
+/* Estilos para el menú desplegable */
+.nav-menu {
+    position: absolute;
+    border-radius: 20px;
+    top: 100%;
+    right: 10px;
+    width: 250px;
+    background-color: #B0BDB7;
+    list-style: none;
+    padding: 20px;
+    margin: 10px 0;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: 9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Muestra el menú cuando el checkbox está marcado */
+#check:checked~.nav-menu {
+    transform: scale(1);
+}
+
+/* Estilo para los botones del menú */
+.nav-menu li {
+    padding: 5px 0;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #228B4A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    background-color: #d1e7dd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #198754;
+    border-radius: 10px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.card div span {
+    font-weight: bold;
+    color: #198754;
+}
+
+.card div p {
+    margin: 5px 0;
+}
+
+.edit-button {
+    margin-left: 20px;
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .edit-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

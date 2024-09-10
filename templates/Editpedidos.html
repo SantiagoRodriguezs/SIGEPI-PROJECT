@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0;
+    filter: invert(0.9);
+}
+</style>
+<body>
+    <header class="header">
+        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../../inicio.html">Servicio al Cliente</a></li>
+            </ul>
+        </nav>
+        <input type="checkbox" id="check" style="display: none;"> 
+        <label for="check" class="bar-btn"> 
+            <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i> 
+        </label>
+        <ul class="nav-menu">
+            <li><button class="nav-btn">Registrar Pedidos</button></li>
+            <li><button class="nav-btn">Gestionar Pedidos</button></li>
+            <li><button class="nav-btn">Salir</button></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1>Editar Pedido</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Cliente - Encargado">
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Número De Celular">
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Número De Orden">
+        </div>
+        <div class="input-group">
+            <select name="tipo-carga" id="tipo-carga">
+                <option value="">Tipo de Carga</option>
+                <option value="seca">Seca</option>
+                <option value="liquida">Líquida</option>
+                <option value="multiproposito">Multipropósito</option>
+                <option value="container">Container</option>
+            </select>
+            <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Punto De Carga">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Punto De Entrega">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <!-- Reemplazo correcto de icono para campos de tipo date -->
+        <div class="input-group">
+            <input type="date" placeholder="Fecha De Cargue">
+            <i class="fas fa-calendar-alt"></i> <!-- Asegúrate de que este icono esté bien posicionado -->
+        </div>
+        <div class="input-group">
+            <input type="date" placeholder="Seleccione una fecha">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="input-group">
+            <input type="time" placeholder="HH:mm">
+            <i class="fas fa-clock"></i>
+        </div>
+        <div class="input-group">
+            <select name="cantidad-vehiculos" id="cantidad-vehiculos">
+                <option value="">Cantidad de Vehiculos</option>
+                <option value="1">1 vehículo</option>
+                <option value="2">2 vehículos</option>
+                <option value="3">3 vehículos</option>
+                <option value="4">4 vehículos</option>
+                <option value="5">5 vehículos</option>
+                <option value="6">6 vehículos</option>
+                <option value="7">7 vehículos</option>
+                <option value="8">8 vehículos</option>
+                <option value="9">9 vehículos</option>
+                <option value="10">10 vehículos</option>
+            </select>
+            <i class="fas fa-caret-down"></i>
+        </div>
+        <button class="btn" onclick="redirigir()">Guardar</button>
+
+<script>
+    function redirigir() {
+        location.href = '../GPedidos/GPedidos.html';
+    }
+</script>
+    </div>
+    
+</body>
+
+</html>

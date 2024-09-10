@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #CFE7D3;
+            /* Color de fondo similar a la imagen */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #B0BDB7;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .user-info {
+            font-weight: bold;
+            font-size: 30px;
+            color: #2F9553;
+        }
+
+        .menu-button-container {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+        }
+
+        .menu-button {
+            background-color: #6abf4b;
+            border: 2px solid #000;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #5aa43d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: #D0E0D9;
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:hover+.dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 12px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #B0B0B0;
+        }
+
+        /* Estilos para los botones de navegación y salida */
+        .nav-button,
+        .exit-button {
+            background-color: #6abf4b;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            width: 100%;
+            text-align: left;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-button:hover,
+        .exit-button:hover {
+            background-color: #5aa43d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-icon {
+            display: flex;
+            font-size: 30px;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            /* Ajusta el top según la altura del nav */
+            right: 0;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .menu button {
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .menu.active {
+                display: block;
+            }
+        }
+
+        .container {
+            background-color: #B0BDB7;
+            padding: 20px;
+            margin: 70px auto 0;
+            width: 600px;
+        }
+
+        .container .header-line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 20px;
+            /* Agrega un margen inferior de 20px */
+        }
+
+        .container h2 {
+    margin-top: -35px; /* Agrega un margen superior de 20px */
+}
+
+        #imgTeca {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .button {
+            display: block;
+            width: 500px;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../img/SIGEPIXTECA.png" alt="Logo XTEC" class="logo">
+        </div>
+        <div class="nav-container">
+            <div class="user-info">Administrador</div>
+        </div>
+        <div class="menu-button-container">
+            <button class="menu-button">&#9776;</button>
+            <div class="dropdown-menu">
+                <a href="/Mecanico/Inicio.html" class="dropdown-item">Lista de vehiculos</a>
+                <a href="/Index.html" class="dropdown-item">Salir</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <img src="../../img/SIGEPIXTECA.png" id="imgTeca" alt="">
+        <div class="header-line">
+            <h1>Bienvenido</h1>
+            <h1 style="color: #228B4A;">Administrador</h1>
+        </div>
+        <h2>¿A dónde deseas ir?</h2>
+        <a href="views/AgUsuarios/AgUsuarios.html" class="button" disabled>AGREGAR USUARIOS</a>
+        <a href="views/LUsuarios/LUsuarios.html" class="button">LIST. USUARIOS</a>
+        <a href="views/AVehiculos/AVehiculos.html" class="button">AGREGAR VEHICULOS</a>
+        <a href="views/ATrailers/ATrailers.html" class="button">AGREGAR TRAILERS</a>
+        <a href="views/Perfil/Perfil.html" class="button">PERFIL</a>
+        <a href="../../index.html" class="button">Salir</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

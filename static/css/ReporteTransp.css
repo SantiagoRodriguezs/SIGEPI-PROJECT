@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #C7E3CC; /* Fondo verde claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+/* Estilos para el contenedor del header */
+.header-container {
+    position: fixed; /* Fija el header en la parte superior de la página */
+    top: 0; /* Alinea el header al borde superior de la página */
+    left: 0; /* Alinea el header al borde izquierdo de la página */
+    width: 100%; /* Hace que el header ocupe todo el ancho de la página */
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    align-items: center; /* Alinea el contenido verticalmente */
+    background-color: #B0BDB7;
+    z-index: 1000; /* Asegura que el header esté por encima de otros contenidos */
+    height: 60px; /* Ajusta la altura del header a 60px */
+    padding: 0 20px; /* Añade padding horizontal para espaciar el contenido */
+    gap: 40px; /* Espacio entre los elementos */
+}
+
+/* Estilos para el enlace del logo */
+.logo-link {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo dentro del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    margin-right: auto; /* Alinea el logo a la izquierda */
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+    width: 200px; /* Ajusta el tamaño del contenedor del logo */
+    height: 70px; /* Ajusta el tamaño del contenedor del logo */
+    overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del contenedor */
+}
+
+/* Estilos para el logo */
+#imgTeca {
+    width: 100%; /* Ajusta el logo al tamaño máximo del contenedor */
+    height: 100%; /* Ajusta el logo al tamaño máximo del contenedor */
+    object-fit: contain; /* Mantiene la proporción del logo dentro del contenedor */
+    display: block; /* Elimina cualquier espacio adicional alrededor de la imagen */
+}
+
+.header-container h1 {
+    margin: 0; /* Elimina márgenes externos */
+    margin-left: -150px; /* Ajusta el margen izquierdo para mover el título */
+    text-align: left; /* Alinea el texto a la izquierda */
+    width: auto; /* Permite que el ancho se ajuste automáticamente */
+    Color: #2F9553;
+}
+
+
+
+/* Estilos para el botón del menú */
+.menu-button-container {
+    position: relative;
+    color: black;
+    margin-left: auto; /* Mueve el botón al extremo derecho */
+}
+
+/* Ajuste del tamaño del botón del menú */
+.menu-button {
+    font-size: 30px; /* Tamaño de fuente más grande */
+    cursor: pointer;
+    background-color: transparent; /* Fondo transparente para el botón del menú */
+    border: none; /* Elimina bordes */
+    padding: 15px; /* Aumenta el espacio interno para hacer el botón más grande */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    color: black; /* Color negro para el ícono o texto del botón */
+    display: inline-flex; /* Ajusta el tamaño del botón de acuerdo con el contenido */
+    align-items: center; /* Alinea el contenido verticalmente */
+    justify-content: center; /* Alinea el contenido horizontalmente */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 53px; /* Ajusta la distancia desde el botón */
+    right: 138px; /* Centra el menú en relación al botón */
+    transform: translateX(50%); /* Ajusta la posición horizontalmente */
+    background-color: #B0BDB7; /* Fondo transparente para el menú */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1;
+    width: 220px; /* Ancho ajustado para el menú desplegable */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px 0; /* Padding superior e inferior para espaciar los elementos */
+}
+
+/* Mostrar el menú cuando se pasa el cursor sobre el botón */
+.menu-button-container:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para los elementos del menú desplegable */
+.dropdown-item {
+    display: block;
+    padding: 10px 17px; /* Aumenta el padding para más espacio clicable */
+    text-decoration: none;
+    color: #333;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    background-color: white; /* Fondo blanco para los elementos del menú */
+    border: 1px solid #B0BDB7; /* Bordes grises alrededor de cada elemento */
+    border-radius: 20px; /* Bordes redondeados */
+    margin: 5px 15px; /* Ajusta el margen para espaciar los elementos del menú */
+    text-align: center; /* Centra el texto de los elementos del menú */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para los elementos del menú desplegable al pasar el ratón */
+.dropdown-item:hover {
+    background-color: #E6F4EA;
+    color: #2F9553;
+    cursor: pointer;
+}
+/* Estilos para el contenedor principal */
+.container {
+    width: 100%; /* Ajusta el ancho al 100% del viewport */
+    max-width: 800px; /* Cambia el ancho máximo a 800px */
+    margin: 0 auto 20px; /* Ajusta el margen para centrar el contenedor */
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 30px; /* Elimina el padding general */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Ajusta el espacio entre secciones */
+    align-items: center;
+    border: none;
+    min-height: 425px; /* Ajusta la altura mínima del contenedor */
+}
+
+/* Estilos para el título del reporte */
+.report-title {
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    color: #2F9553;
+    text-align: center;
+    background-color: #B0BDB7;
+    padding: 40px; /* Reduce el espacio interno para menor altura */
+    width: 97%; /* Ajusta el ancho al 95% del contenedor padre */
+    max-width: 800px; /* Limita el ancho máximo a 800px */
+    box-sizing: border-box;
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold;
+
+}
+
+/* Área de texto para que los usuarios escriban */
+.input-content {
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 20px; /* Espacio interno para el área de texto */
+    border: 1px solid black; /* Borde negro alrededor del área de texto */
+    font-size: 17px; /* Tamaño de fuente */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    background-color: transparent;
+}
+/* Estilos para el contenedor de botones */
+.button-container {
+    border: 1px solid black;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 570px; /* Limita el ancho máximo a 570px */
+    padding: 10px; /* Espacio interno del contenedor */
+    box-sizing: border-box;
+    display: flex;
+    gap: 10px; /* Espacio específico entre los botones */
+    align-items: center; /* Centra los botones verticalmente */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: -15px; /* Ajusta el margen superior a negativo para subir el contenedor */
+}
+
+/* Estilos para el botón de adjuntar fotos */
+.add-photo-button-label {
+    background-color: #2F9553; /* Fondo para el botón */
+    border: 1px solid #2F9553; /* Borde para el botón */
+    border-radius: 50px; /* Bordes redondeados */
+    color: black; /* Color del texto del botón */
+    padding: 20px 40px; /* Espacio interno del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor tipo puntero para el botón */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Ajusta el tamaño del botón */
+}
+
+.add-photo-button-label:hover{
+    background-color: #2b7c47; /* Color de fondo rojo más oscuro al pasar el ratón */
+    border-color: #2b7c47; /* Color del borde rojo aún más oscuro al pasar el ratón */
+}
+
+/* Estilos para el enlace de enviar reporte */
+.send-message-button {
+    background-color: #2F9553; /* Fondo verde para el enlace */
+    color: black; /* Texto blanco para el enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 20px 40px; /* Espacio interno del enlace */
+    font-size: 16px; /* Tamaño de la fuente */
+    display: inline-block; /* Ajusta el tamaño del enlace */
+    text-align: center; /* Centra el texto */
+}
+.send-message-button:hover{
+    background-color: #2b7c47; /* Color de fondo rojo más oscuro al pasar el ratón */
+    border-color: #2b7c47; /* Color del borde rojo aún más oscuro al pasar el ratón */
+}
+
+/* Contenedor principal para mensaje estatico */
+.message-wrapper {
+    display: flex; /* Alinea los elementos en una fila */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 5px; /* Espacio entre el contenedor de mensajes y el ícono */
+    position: fixed; /* Fija el contenedor en la parte inferior de la pantalla */
+    bottom: 70px; /* Ajusta la distancia desde el borde inferior de la pantalla */
+    left: 50%; /* Posiciona el centro del contenedor en el 50% de la pantalla */
+    transform: translateX(-50%); /* Mueve el contenedor hacia la izquierda la mitad de su ancho */
+    width: 53%; /* Ajusta el ancho del contenedor para que sea más ancho */
+    padding: 10px; /* Espacio interno para el contenedor de mensajes */
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Sin sombra */
+    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+/* Estilos para el contenedor de mensajes */
+.report-container {
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    box-shadow: none; /* Sin sombra */
+    flex-grow: 1; /* Permite que el contenedor de mensajes ocupe el espacio disponible */
+    color: #2F9553; /* Color de texto blanco */
+    border: none; /* Sin bordes */
+    width: 590px; /* Ajusta el ancho al 100% del contenedor padre */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+
+/* Estilo adicional para cambiar el color del texto al escribir */
+textarea::placeholder {
+    color: black; /* Color más claro para el texto del placeholder */
+}
+
+.static-content {
+    background-color: #2F9553; /* Fondo blanco para el contenido estático */
+    border: 1px solid #B0BDB7; /* Borde con el color de fondo verde claro */
+    border-radius: 35px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente del contenido estático */
+    color: white; /* Color del texto */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    margin-bottom: -20px;
+}
+
+
+
+/* Estilo para el cuadro de diálogo personalizado */
+.custom-alert {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para que esté perfectamente centrado */
+    background-color: white;
+    border: 2px solid #B0BDB7;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1001; /* Más alto que cualquier otro elemento */
+    width: 400px;
+    padding: 50px;
+    text-align: center;
+}
+
+.alert-content button {
+    background-color: #2F9553;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.alert-content button:hover {
+    background-color: #256f39;
+}
+
+/* Estilos para el contenedor de regresar */
+.regresar {
+    position: fixed;
+    bottom: 500px; /* Distancia desde el borde inferior */
+    top:100px;
+    left: 20px; /* Distancia desde el borde izquierdo */
+    width: 40px; /* Tamaño del contenedor */
+    height: 40px; /* Tamaño del contenedor */
+    background-color: transparent; /* Fondo transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que la campana esté por encima de otros contenidos */
+    border: none; /* Elimina cualquier borde */
+    box-shadow: none; /* Elimina cualquier sombra */
+    padding: 0; /* Elimina el padding extra */
+}
+
+/* Estilos para la imagen */
+.regresar img {
+    width: 40px; /* Tamaño de la imagen ajustado al contenedor */
+    height: 40px; /* Tamaño de la imagen ajustado al contenedor */
+}
+
+
+/* Efecto hover para el icono de regresar */
+.regresar:hover {
+    background-color: transparent; /* Fondo ligeramente oscuro al pasar el cursor */
+}
+
+.regresar:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el cursor */
+}
+
+/* Estilos para la campana de notificaciones */
+.notification-bell {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+    width: 55px; /* Tamaño del círculo */
+    height: 55px; /* Tamaño del círculo */
+    background-color: transparent; /* Fondo del círculo */
+    border-radius: 50%; /* Hace el contenedor circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que la campana esté por encima de otros contenidos */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+/* Estilos para la imagen de la campana */
+.notification-bell img {
+    width: 60%;
+    height: 60%;
+    transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+}
+
+/* Estilos para el cuadro de historial de notificaciones */
+.notification-box {
+    position: fixed;
+    bottom: 85px; /* Ajusta la distancia desde el borde inferior */
+    left: 20px; /* Alinea con la campana */
+    width: 300px; /* Ancho ajustado para más espacio */
+    max-height: 400px; /* Altura máxima para más contenido */
+    background-color: #B0BDB7; /* Color de fondo blanco */
+    border: 1px solid #ddd; /* Color del borde */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    display: none; /* Oculto por defecto */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    z-index: 1001; /* Asegura que esté por encima de otros contenidos */
+    padding: 20px; /* Aumenta el padding para mejor espaciado interno */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Transición de visibilidad */
+.notification-box.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification-box.hide {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Estilos para la lista de notificaciones */
+.notification-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #2F9553; /* Fondo del cuadro de notificaciones */
+    border-radius: 8px; /* Bordes redondeados para la lista */
+}
+
+/* Estilos para los elementos de la lista */
+.notification-box ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Color del borde más suave */
+    transition: background-color 0.3s ease; /* Transición para el fondo */
+}
+
+/* Efecto hover para el elemento de la lista */
+.notification-box ul li:hover {
+    background-color: #319253; /* Fondo gris claro en hover */
+}
+
+/* Elimina el borde en el último elemento */
+.notification-box ul li:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para los enlaces dentro de la lista */
+.notification-box ul li a {
+    text-decoration: none;
+    color: white;
+    display: block; /* Asegura que el área clicable sea el 100% del elemento */
+    font-size: 15px; /* Ajusta el tamaño de la fuente */
+}
+
+/* Efecto hover para los enlaces */
+.notification-box ul li a:hover {
+    text-decoration: underline;
+}
