@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transportador Perfil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/PerfilTransp.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
 <body><header>
     <!-- Contenedor del header -->
     <div class="header-container">
         <!-- Contenedor del logo -->
-        <a href="../Inicio.html" class="logo-link">
+        <a href="/MenuTransportador" class="logo-link">
             <!-- Contenedor del logo -->
             <div class="logo-container">
-                <img src="../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+                <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="Logo">
             </div>
         </a>
         <h1>TRANSPORTADOR</h1>
@@ -23,10 +23,10 @@
         <div class="menu-button-container">
             <button class="menu-button">&#9776;</button>
             <div class="dropdown-menu">
-                <a href="../Historial/historial.html" class="dropdown-item">Consultar historial</a>
-                <a href="../ConsultarRuta/Consultar.html" class="dropdown-item">Consultar ruta</a>
-                <a href="../Perfil/Perfil.html" class="dropdown-item">Mi perfil</a>
-                <a href="../../../index.html" class="dropdown-item">Salir</a>
+                <a href="/HistorialTransp" class="dropdown-item">Consultar historial</a>
+                <a href="/ConsulItinerarioTransp" class="dropdown-item">Consultar ruta</a>
+                <a href="/PerfilTransp" class="dropdown-item">Mi perfil</a>
+                <a href="/Login" class="dropdown-item">Salir</a>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <div class="profile-container">
             <!-- Contenedor de perfil -->
             <div class="profile-image">
-                <img src="../../../img/ImagenPerfil.png" alt="Perfil">
+                <img src="{{ url_for('static', filename='img/ImagenPerfil.png') }}" alt="Perfil">
             </div>
             <div class="profile-data">
                 <p><strong>Nombre:</strong> Juan Pérez</p>
@@ -48,7 +48,7 @@
                 <p><strong>Teléfono:</strong> 3111234567</p>
                 <p><strong>Contraseña:</strong> *********</p>
                 </div>
-                <button type="button" class="edit-profile-button" onclick="window.location.href='./EditarPerfil/Editar.html'">Editar perfil</button>
+                <button type="button" class="edit-profile-button" onclick="window.location.href='/EditPerfilTransp'">Editar perfil</button>
 
 
         </div>
@@ -56,22 +56,22 @@
 </div>
 
 <!-- Icono de regresar -->
-<a href="../Inicio.html" class="regresar">
-    <img src="../../../img/Regresar.png" alt="Regresar">
+<a href="/MenuTransportador" class="regresar">
+    <img src="{{ url_for('static', filename='img/Regresar.png') }}" alt="Regresar">
 </a>
 
 
 <!-- Campana de notificaciones -->
 <div class="notification-bell" onclick="toggleNotificationBox()">
-    <img src="../../../img/Notificaciones.png" alt="Notificaciones">
+    <img src="{{ url_for('static', filename='img/Notificaciones.png') }}" alt="Notificaciones">
 </div>
 
 <!-- Cuadro de historial de notificaciones -->
 <div class="notification-box" id="notificationBox">
     <ul>
-        <li><a href="notificacion.html">Notificación 1</a></li>
-        <li><a href="notificacion.html">Notificación 2</a></li>
-        <li><a href="notificacion.html">Notificación 3</a></li>
+        <li><a href="/notificacion.html">Notificación 1</a></li>
+        <li><a href="/notificacion.html">Notificación 2</a></li>
+        <li><a href="/notificacion.html">Notificación 3</a></li>
     </ul>
 </div>
 

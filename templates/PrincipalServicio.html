@@ -5,42 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicio al Cliente</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/PrincipalServicio.css')}}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../../img/SIGEPIXTECA.png" alt="Logo de Sigepi">
+            <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi">
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="inicio.html">Servicio al Cliente</a></li>
+                <li><a href="/MenuServicio">Servicio al Cliente</a></li>
             </ul>
             <input type="checkbox" id="check" style="display: none;">
         <label for="check" class="bar-btn">
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">Registrar Pedidos</button></li>
-            <li><button class="nav-btn">Gestionar Pedidos</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/RegistrarPedido'">Registrar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/GestionarPedidos'">Gestionar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/Login'">Salir</button></li>
         </ul>
         </nav>
         
     </header>
     <div class="container">
-        <img src="../../img/SIGEPIXTECA.png" id="imgTeca" alt="">
+        <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="">
         <div class="header-line">
             <h1>Bienvenido</h1>
             <h1 style="color: #228B4A;">Asesor</h1>
         </div>
         
         <h2>¿A dónde deseas ir?</h2>
-        <button class="btn-container" onclick="navigateTo('views/RPedidos/RPedidos.html')">Registrar Pedidos</button>
-        <button class="btn-container" onclick="navigateTo('views/GPedidos/GPedidos.html')">Gestionar Pedidos</button>
-        <button class="btn-container" onclick="navigateTo('../../index.html')">SALIR</button>
+        <button class="btn-container" onclick="navigateTo('/RegistrarPedido')">Registrar Pedidos</button>
+        <button class="btn-container" onclick="navigateTo('/GestionarPedidos')">Gestionar Pedidos</button>
+        <button class="btn-container" onclick="navigateTo('/Login')">SALIR</button>
     </div>
     <!--Scripts de navegación-->
     <script>

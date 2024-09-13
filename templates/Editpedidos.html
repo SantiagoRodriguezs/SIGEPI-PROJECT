@@ -5,24 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pedidos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/EditPedidos.css') }}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator{
-    cursor: pointer;
-    border-radius: 4px;
-    margin-right: 2px;
-    opacity: 0;
-    filter: invert(0.9);
-}
+    input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 2px;
+        opacity: 0;
+        filter: invert(0.9);
+    }
 </style>
 <body>
     <header class="header">
-        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <div class="logo"> 
+            <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi"> 
+        </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../inicio.html">Servicio al Cliente</a></li>
+                <li><a href="/ServicioCliente">Servicio al Cliente</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;"> 
@@ -30,9 +32,9 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i> 
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">Registrar Pedidos</button></li>
-            <li><button class="nav-btn">Gestionar Pedidos</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/EditarPedido'">Registrar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/GestionarPedidos'">Gestionar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/Login'">Salir</button></li>
         </ul>
     </header>
     <div class="container">
@@ -95,11 +97,11 @@
         </div>
         <button class="btn" onclick="redirigir()">Guardar</button>
 
-<script>
-    function redirigir() {
-        location.href = '../GPedidos/GPedidos.html';
-    }
-</script>
+    <script>
+        function redirigir() {
+            location.href = '/GestionarPedidos';
+        }
+    </script>
     </div>
     
 </body>

@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Usuarios</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/AgUsuarios.css')}}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
-        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi">
+        </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../index.html">Administrador</a></li>
+                <!-- Redirigir a la vista del Administrador -->
+                <li><a href="{{ url_for('MenuAdmin') }}">Administrador</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;">
@@ -21,14 +24,16 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">AGREGAR USUARIOS</button></li>
-            <li><button class="nav-btn">LIST. USUARIOS</button></li>
-            <li><button class="nav-btn">AGREGAR VEHICULOS</button></li>
-            <li><button class="nav-btn">AGREGAR TRAILERS</button></li>
-            <li><button class="nav-btn">PERFIL</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <!-- Botones con redirección a rutas de Flask -->
+            <li><a href="/AgregarUsuarios"><button class="nav-btn">AGREGAR USUARIOS</button></a></li>
+            <li><a href="/ListadoUsuarios"><button class="nav-btn">LIST. USUARIOS</button></a></li>
+            <li><a href="/AgregarVehiculos"><button class="nav-btn">AGREGAR VEHICULOS</button></a></li>
+            <li><a href="/AgregarTrailers"><button class="nav-btn">AGREGAR TRAILERS</button></a></li>
+            <li><a href="/PerfilAdministrador"><button class="nav-btn">PERFIL</button></a></li>
+            <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
         </ul>
     </header>
+
     <div class="main-content">
         <div class="container">
             <div class="profile-icon">
@@ -41,7 +46,7 @@
             <div class="input-field">Correo Electronico</div>
             <div class="input-field">Numero de Celular</div>
             <div class="input-field">Contraseña</div>
-            <button class="submit-button">Agregar usuario</button>
+            <a href="/ListadoUsuarios"><button class="submit-button">Agregar usuario</button></a>
         </div>
     </div>
 </body>

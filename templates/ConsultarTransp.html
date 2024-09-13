@@ -5,25 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transportador Ruta</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ConsultarTransp.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <a href="../Inicio.html" class="logo-link">
+            <a href="/MenuSupervisor" class="logo-link">
                 <div class="logo-container">
-                    <img src="../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+                    <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="Logo">
                 </div>
             </a>
             <h1>TRANSPORTADOR</h1>
             <div class="menu-button-container">
                 <button class="menu-button">&#9776;</button>
                 <div class="dropdown-menu">
-                    <a href="../Historial/historial.html" class="dropdown-item">Consultar historial</a>
-                    <a href="../ConsultarRuta/Consultar.html" class="dropdown-item">Consultar ruta</a>
-                    <a href="../Perfil/Perfil.html" class="dropdown-item">Mi perfil</a>
-                    <a href="../../../index.html" class="dropdown-item">Salir</a>
+                    <a href="/ListadoFlotas" class="dropdown-item">Estado flotas</a>
+                    <a href="/GestionarPedidos" class="dropdown-item">Gest. pedidos</a>
+                    <a href="/PerfilSupervisor" class="dropdown-item">Mi perfil</a>
+                    <a href="/Login" class="dropdown-item">Salir</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                         <p>Descripción detallada del pedido realizado, incluyendo todas las especificaciones necesarias.</p>
                     </div>
                     <div class="button-container">
-                        <button id="reportButton" class="report-button" onclick="window.location.href='./Reporte/reporte.html';">Generar Reporte</button>
+                        <button id="reportButton" class="report-button" onclick="window.location.href='/ReporteTransp'">Generar Reporte</button>
                         <button id="endRouteButton" class="end-route-button" onclick="openEndRouteDialog();">Terminar Ruta</button>
                     </div>
                 </div>
@@ -67,54 +67,55 @@
     </div>
 
     <!-- Icono de regresar -->
-    <a href="../Inicio.html" class="regresar">
-        <img src="../../../img/Regresar.png" alt="Regresar">
+    <a href="/MenuTransportador" class="regresar">
+        <img src="{{ url_for('static', filename='img/Regresar.png') }}" alt="Regresar">
     </a>
 
     <!-- Campana de notificaciones -->
     <div class="notification-bell" onclick="toggleNotificationBox()">
-        <img src="../../../img/Notificaciones.png" alt="Notificaciones">
+        <img src="{{ url_for('static', filename='img/Notificaciones.png') }}" alt="Notificaciones">
     </div>
 
     <!-- Cuadro de historial de notificaciones -->
     <div class="notification-box" id="notificationBox">
         <ul>
-            <li><a href="notificacion.html">Notificación 1</a></li>
-            <li><a href="notificacion.html">Notificación 2</a></li>
-            <li><a href="notificacion.html">Notificación 3</a></li>
+            <li><a href="/Notificacion1">Notificación 1</a></li>
+            <li><a href="/Notificacion2">Notificación 2</a></li>
+            <li><a href="/Notificacion3">Notificación 3</a></li>
         </ul>
     </div>
-<!-- Cuadro de confirmación de terminar ruta -->
-<div id="endRouteDialog" class="dialog-overlay">
-    <div class="dialog-content">
-        <p>¿Está seguro de que desea terminar la ruta?</p>
-        <button id="confirmEndRoute" class="dialog-button confirm">Aceptar</button>
-        <button id="cancelEndRoute" class="dialog-button cancel">Cancelar</button>
+
+    <!-- Cuadro de confirmación de terminar ruta -->
+    <div id="endRouteDialog" class="dialog-overlay">
+        <div class="dialog-content">
+            <p>¿Está seguro de que desea terminar la ruta?</p>
+            <button id="confirmEndRoute" class="dialog-button confirm">Aceptar</button>
+            <button id="cancelEndRoute" class="dialog-button cancel">Cancelar</button>
+        </div>
     </div>
-</div>
 
-<script>
-    // Obtener elementos del DOM
-    const endRouteDialog = document.getElementById('endRouteDialog');
-    const cancelEndRouteButton = document.getElementById('cancelEndRoute');
-    const confirmEndRouteButton = document.getElementById('confirmEndRoute');
+    <script>
+        // Obtener elementos del DOM
+        const endRouteDialog = document.getElementById('endRouteDialog');
+        const cancelEndRouteButton = document.getElementById('cancelEndRoute');
+        const confirmEndRouteButton = document.getElementById('confirmEndRoute');
 
-    // Función para cerrar el cuadro de diálogo
-    function closeDialog() {
-        endRouteDialog.style.display = 'none';
-    }
+        // Función para cerrar el cuadro de diálogo
+        function closeDialog() {
+            endRouteDialog.style.display = 'none';
+        }
 
-    // Función para redirigir a inicio.html
-    function redirectToHome() {
-        window.location.href = '../Inicio.html';
-    }
+        // Función para redirigir a la página de inicio
+        function redirectToHome() {
+            window.location.href = '/MenuTransportador';
+        }
 
-    // Asignar eventos a los botones
-    cancelEndRouteButton.addEventListener('click', closeDialog);
-    confirmEndRouteButton.addEventListener('click', redirectToHome);
-</script>
+        // Asignar eventos a los botones
+        cancelEndRouteButton.addEventListener('click', closeDialog);
+        confirmEndRouteButton.addEventListener('click', redirectToHome);
+    </script>
 
-<script>
+    <script>
         function toggleNotificationBox() {
             var notificationBox = document.getElementById('notificationBox');
             var bell = document.querySelector('.notification-bell img');
@@ -135,9 +136,7 @@
         document.getElementById('confirmEndRoute').onclick = function() {
             alert("Ruta terminada.");
             document.getElementById('endRouteDialog').style.display = 'none';
-
         }
-
-</script>
+    </script>
 </body>
 </html>

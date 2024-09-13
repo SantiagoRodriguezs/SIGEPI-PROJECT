@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Pedidos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/RegisPedidos.css')}}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -19,10 +19,10 @@
 </style>
 <body>
     <header class="header">
-        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <div class="logo"> <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi"> </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../inicio.html">Servicio al Cliente</a></li>
+                <li><a href="/MenuServicio">Servicio al Cliente</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;"> 
@@ -30,9 +30,9 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i> 
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">Registrar Pedidos</button></li>
-            <li><button class="nav-btn">Gestionar Pedidos</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/RegistrarPedido'">Registrar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/GestionarPedidos'">Gestionar Pedidos</button></li>
+            <li><button class="nav-btn" onclick="window.location.href='/Login'">Salir</button></li>
         </ul>
     </header>
     <div class="container">
@@ -97,7 +97,7 @@
 
 <script>
     function redirigir() {
-        location.href = '../GPedidos/GPedidos.html';
+        location.href = '/GestionarPedidos';
     }
 </script>
     </div>

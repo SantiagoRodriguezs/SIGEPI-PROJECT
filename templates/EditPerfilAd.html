@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perdil</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/EditPerfil.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
 <body>
@@ -13,10 +13,10 @@
     <!-- Contenedor del header -->
     <div class="header-container">
         <!-- Contenedor del logo -->
-        <a href="../../../index.html" class="logo-link">
+        <a href="/MenuAdmin" class="logo-link">
             <!-- Contenedor del logo -->
             <div class="logo-container">
-                <img src="../../../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+                <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="Logo">
             </div>
         </a>
         <h1>Administrador</h1>
@@ -24,12 +24,12 @@
         <div class="menu-button-container">
             <button class="menu-button">&#9776;</button>
             <div class="dropdown-menu">
-                <a href="../../AgUsuarios/AgUsuarios.html" class="dropdown-item">AGREGAR USUARIOS</a>
-                <a href="../../LUsuarios/LUsuarios.html" class="dropdown-item">LIST. USUARIOS</a>
-                <a href="../../AVehiculos/AVehiculos.html" class="dropdown-item">AGREGAR VEHICULOS</a>
-                <a href="../../ATrailers/ATrailers.html" class="dropdown-item">AGREGAR TRAILERS</a>
-                <a href="../Perfil.html" class="dropdown-item">PERFIL</a>
-                <a href="../../../../../index.html" class="dropdown-item">Salir</a>
+                <li><a href="/AgregarUsuarios"><button class="nav-btn">AGREGAR USUARIOS</button></a></li>
+                <li><a href="/ListadoUsuarios"><button class="nav-btn">LIST. USUARIOS</button></a></li>
+                <li><a href="/AgregarVehiculos"><button class="nav-btn">AGREGAR VEHICULOS</button></a></li>
+                <li><a href="/AgregarTrailers"><button class="nav-btn">AGREGAR TRAILERS</button></a></li>
+                <li><a href="/PerfilAdministrador"><button class="nav-btn">PERFIL</button></a></li>
+                <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
             <!-- Contenedor de perfil -->
             <form id="profileForm" action="/submit-profile" method="POST" class="profile-form">
                 <div class="profile-image">
-                    <img src="../../../../../img/ImagenPerfil.png" alt="Perfil">
+                    <img src="{{ url_for('static', filename='img/ImagenPerfil.png') }}" alt="Perfil">
                 </div>
                 <div class="profile-data">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre" value="" required>
@@ -83,19 +83,6 @@
         }
     }
 
-    // Función para confirmar la acción de programar itinerario
-    function confirmProgramarItinerario() {
-        var form = document.getElementById('profileForm');
-        var isValid = form.checkValidity();
-        if (isValid) {
-            document.getElementById('confirmationText').innerText = '¿Está seguro de que desea programar el itinerario?';
-            document.getElementById('confirmationMessage').style.display = 'block';
-            document.getElementById('confirmationMessage').dataset.action = 'programar';
-        } else {
-            alert('Por favor, complete todos los campos.');
-        }
-    }
-
     // Función para confirmar la acción de guardar cambios
     function confirmGuardarCambios() {
         document.getElementById('confirmationText').innerText = '¿Está seguro de que desea guardar los cambios?';
@@ -110,7 +97,7 @@
             document.getElementById('profileForm').submit();
         } else if (action === 'guardar') {
             // Redirige al usuario a una página específica
-            window.location.href = '../Perfil.html';
+            window.location.href = '/PerfilAdministrador';
         }
     }
 

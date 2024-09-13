@@ -258,10 +258,10 @@
 
 <body>
     <header class="header">
-        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <div class="logo"> <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi"> </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../index.html">Administrador</a></li>
+                <li><a href="{{ url_for('MenuAdmin') }}">Administrador</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;">
@@ -269,12 +269,12 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">AGREGAR USUARIOS</button></li>
-            <li><button class="nav-btn">LIST. USUARIOS</button></li>
-            <li><button class="nav-btn">AGREGAR VEHICULOS</button></li>
-            <li><button class="nav-btn">AGREGAR TRAILERS</button></li>
-            <li><button class="nav-btn">PERFIL</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><a href="/AgregarUsuarios"><button class="nav-btn">AGREGAR USUARIOS</button></a></li>
+            <li><a href="/ListadoUsuarios"><button class="nav-btn">LIST. USUARIOS</button></a></li>
+            <li><a href="/AgregarVehiculos"><button class="nav-btn">AGREGAR VEHICULOS</button></a></li>
+            <li><a href="/AgregarTrailers"><button class="nav-btn">AGREGAR TRAILERS</button></a></li>
+            <li><a href="/PerfilAdministrador"><button class="nav-btn">PERFIL</button></a></li>
+            <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
         </ul>
     </header>
     <div class="container">
@@ -298,9 +298,10 @@
         function hideNotification() {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('notification').style.display = 'none';
-            window.location.href = '../../index.html'; // Redirección a la vista
+            window.location.href = '/MenuAdmin'; // Redirección a la vista de menu administrador
         }
     </script>
 </body>
+
 
 </html>

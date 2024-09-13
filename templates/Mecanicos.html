@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mecanico</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Mecanicos.css')}}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
     <style>
         .overlay {
@@ -67,10 +67,10 @@
 
 <body>
     <header class="header">
-        <div class="logo"> <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi"> </div>
+        <div class="logo"> <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi"> </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../inicio.html">Mecanico</a></li>
+                <li><a href="/Mecanicos">Mecanico</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;"> 
@@ -78,8 +78,8 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i> 
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">List. Vehiculos</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><a href="/Mecanicos"><button class="nav-btn">List. Vehiculos</button></a></li>
+            <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
         </ul>
     </header>
     

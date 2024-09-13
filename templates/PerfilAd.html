@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Perfil.css')}}">
     <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../../../../img/SIGEPIXTECA.png" alt="Logo de Sigepi">
+            <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi">
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="../../index.html">Administrador</a></li>
+                <li><a href="/MenuAdmin">Administrador</a></li>
             </ul>
         </nav>
         <input type="checkbox" id="check" style="display: none;">
@@ -24,12 +24,12 @@
             <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
         </label>
         <ul class="nav-menu">
-            <li><button class="nav-btn">AGREGAR USUARIOS</button></li>
-            <li><button class="nav-btn">LIST. USUARIOS</button></li>
-            <li><button class="nav-btn">AGREGAR VEHICULOS</button></li>
-            <li><button class="nav-btn">AGREGAR TRAILERS</button></li>
-            <li><button class="nav-btn">PERFIL</button></li>
-            <li><button class="nav-btn">Salir</button></li>
+            <li><a href="/AgregarUsuarios"><button class="nav-btn">AGREGAR USUARIOS</button></a></li>
+            <li><a href="/ListadoUsuarios"><button class="nav-btn">LIST. USUARIOS</button></a></li>
+            <li><a href="/AgregarVehiculos"><button class="nav-btn">AGREGAR VEHICULOS</button></a></li>
+            <li><a href="/AgregarTrailers"><button class="nav-btn">AGREGAR TRAILERS</button></a></li>
+            <li><a href="/PerfilAdministrador"><button class="nav-btn">PERFIL</button></a></li>
+            <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
         </ul>
     </header>
 
@@ -38,7 +38,7 @@
             <div class="profile-container">
                 <!-- Contenedor de perfil -->
                 <div class="profile-image">
-                    <img src="../../../../img/ImagenPerfil.png" alt="Perfil">
+                    <img src="{{ url_for('static', filename='img/ImagenPerfil.png') }}" alt="Perfil">
                 </div>
                 <div class="profile-data">
                     <p><strong>Nombre:</strong> Juan Pérez</p>
@@ -49,7 +49,7 @@
                     <p><strong>Teléfono:</strong> 3111234567</p>
                     <p><strong>Contraseña:</strong> *********</p>
                 </div>
-                <button type="button" class="edit-profile-button" onclick="window.location.href='./EditarPerfil/Editar.html'">Editar perfil</button>
+                <button type="button" class="edit-profile-button" onclick="window.location.href='/EditarPerfilAdministrador'">Editar perfil</button>
             </div>
         </main>
     </div>

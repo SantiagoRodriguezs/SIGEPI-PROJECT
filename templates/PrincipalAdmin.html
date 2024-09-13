@@ -201,7 +201,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="../../img/SIGEPIXTECA.png" alt="Logo XTEC" class="logo">
+            <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo XTEC" class="logo">
         </div>
         <div class="nav-container">
             <div class="user-info">Administrador</div>
@@ -209,24 +209,24 @@
         <div class="menu-button-container">
             <button class="menu-button">&#9776;</button>
             <div class="dropdown-menu">
-                <a href="/Mecanico/Inicio.html" class="dropdown-item">Lista de vehiculos</a>
-                <a href="/Index.html" class="dropdown-item">Salir</a>
+                <a href="/ListadoUsuarios" class="dropdown-item">Lista de Usuarios</a>
+                <a href="/Login" class="dropdown-item">Salir</a>
             </div>
         </div>
     </nav>
     <div class="container">
-        <img src="../../img/SIGEPIXTECA.png" id="imgTeca" alt="">
+        <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="">
         <div class="header-line">
             <h1>Bienvenido</h1>
             <h1 style="color: #228B4A;">Administrador</h1>
         </div>
         <h2>¿A dónde deseas ir?</h2>
-        <a href="views/AgUsuarios/AgUsuarios.html" class="button" disabled>AGREGAR USUARIOS</a>
-        <a href="views/LUsuarios/LUsuarios.html" class="button">LIST. USUARIOS</a>
-        <a href="views/AVehiculos/AVehiculos.html" class="button">AGREGAR VEHICULOS</a>
-        <a href="views/ATrailers/ATrailers.html" class="button">AGREGAR TRAILERS</a>
-        <a href="views/Perfil/Perfil.html" class="button">PERFIL</a>
-        <a href="../../index.html" class="button">Salir</a>
+        <a href="/AgregarUsuarios" class="button">AGREGAR USUARIOS</a>
+        <a href="/ListadoUsuarios" class="button">LIST. USUARIOS</a>
+        <a href="/AgregarVehiculos" class="button">AGREGAR VEHICULOS</a>
+        <a href="/AgregarTrailers" class="button">AGREGAR TRAILERS</a>
+        <a href="/PerfilAdministrador" class="button">PERFIL</a>
+        <a href="/Login" class="button">Salir</a>
     </div>
     <script>
         function toggleMenu() {
@@ -235,5 +235,6 @@
         }
     </script>
 </body>
+
 
 </html>

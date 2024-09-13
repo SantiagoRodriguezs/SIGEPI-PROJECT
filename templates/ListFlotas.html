@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supervisor Flotas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/ListFlotas.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
 <body>
@@ -16,7 +16,7 @@
             <a href="../Inicio.html" class="logo-link">
                 <!-- Contenedor del logo -->
                 <div class="logo-container">
-                    <img src="../../../img/SIGEPIXTECA.png" id="imgTeca" alt="Logo">
+                    <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" id="imgTeca" alt="Logo">
                 </div>
             </a>
             <h1>SUPERVISOR</h1>
@@ -24,10 +24,10 @@
             <div class="menu-button-container">
                 <button class="menu-button">&#9776;</button>
                 <div class="dropdown-menu">
-                    <a href="../Flotas/flotas.html" class="dropdown-item">Estado flotas</a>
-                    <a href="../Pedidos/pedidos.html" class="dropdown-item">Gest. pedidos</a>
-                    <a href="../Perfil/perfil.html" class="dropdown-item">Mi perfil</a>
-                    <a href="../../../index.html" class="dropdown-item">Salir</a>
+                    <a href="/ListadoFlotas" class="dropdown-item">Estado flotas</a>
+                    <a href="/ListadoPedidos" class="dropdown-item">Gest. pedidos</a>
+                    <a href="/PerfilSupervisor" class="dropdown-item">Mi perfil</a>
+                    <a href="/Login" class="dropdown-item">Salir</a>
                 </div>
             </div>
         </div>
@@ -65,8 +65,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>
         
@@ -95,8 +95,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>      
 
@@ -125,8 +125,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>      
 
@@ -155,8 +155,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>      
 
@@ -185,8 +185,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>      
 
@@ -215,8 +215,8 @@
             </main>
             <!-- Botones de acción al lado derecho -->
             <div class="action-buttons-container">
-                <a href="./ConsultarRuta/Consultar.html" class="report-button button-style">Consultar ruta</a>
-                <a href="./Historial/historial.html" class="report-button button-style">Consultar historial</a>
+                <a href="/ConsultarRutaSupervisor" class="report-button button-style">Consultar ruta</a>
+                <a href="/HistorialSupervisor" class="report-button button-style">Consultar historial</a>
             </div>
         </section>      
         
@@ -224,22 +224,22 @@
 
 
 <!-- Icono de regresar -->
-<a href="../Inicio.html" class="regresar">
-    <img src="../../../img/Regresar.png" alt="Regresar">
+<a href="/MenuSupervisor" class="regresar">
+    <img src="{{ url_for('static', filename='img/Regresar.png') }}" alt="Regresar">
 </a>
 
 
 <!-- Campana de notificaciones -->
 <div class="notification-bell" onclick="toggleNotificationBox()">
-    <img src="../../../img/Notificaciones.png" alt="Notificaciones">
+    <img src="{{ url_for('static', filename='img/Notificaciones.png') }}" alt="Notificaciones">
 </div>
 
 <!-- Cuadro de historial de notificaciones -->
 <div class="notification-box" id="notificationBox">
     <ul>
-        <li><a href="notificacion.html">Notificación 1</a></li>
-        <li><a href="notificacion.html">Notificación 2</a></li>
-        <li><a href="notificacion.html">Notificación 3</a></li>
+        <li><a href="/notificacion.html">Notificación 1</a></li>
+        <li><a href="/notificacion.html">Notificación 2</a></li>
+        <li><a href="/notificacion.html">Notificación 3</a></li>
     </ul>
 </div>
 
