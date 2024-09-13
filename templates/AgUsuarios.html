@@ -39,14 +39,51 @@
             <div class="profile-icon">
                 <i class="fas fa-user"></i>
             </div>
-            <div class="input-field">Nombres</div>
-            <div class="input-field">Apellidos</div>
-            <div class="input-field">Fecha de Nacimiento</div>
-            <div class="input-field">Numero de identificación</div>
-            <div class="input-field">Correo Electronico</div>
-            <div class="input-field">Numero de Celular</div>
-            <div class="input-field">Contraseña</div>
-            <a href="/ListadoUsuarios"><button class="submit-button">Agregar usuario</button></a>
+            <form action="/AgregarUsuarios" method="POST"> <!-- Agrega el método y la acción del formulario -->
+                <div class="input-group">
+                    <select name="rol"> <!-- Asegúrate de que el nombre del campo coincida con el usado en el backend -->
+                        <option value="" disabled selected>ROL</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Servicio al cliente</option>
+                        <option value="3">Supervisor</option>
+                        <option value="4">Transportador</option>
+                        <option value="5">Mecanicos</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="nombre">Nombres</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="input-field">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="input-field">
+                    <label for="fecha_nac">Fecha de Nacimiento</label>
+                    <input type="date" id="fecha_nac" name="fecha_nac" required>
+                </div>
+                <div class="input-field">
+                    <label for="num_doc">Numero de identificación</label>
+                    <input type="text" id="num_doc" name="num_doc" required>
+                </div>
+                <div class="input-field">
+                    <label for="correo">Correo Electronico</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="input-field">
+                    <label for="telefono">Numero de Celular</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="input-field">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="input-field">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+                <button type="submit" class="submit-button">Agregar usuario</button> <!-- Cambia el <a> por un <button> para enviar el formulario -->
+            </form>
         </div>
     </div>
 </body>

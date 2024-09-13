@@ -1,5 +1,6 @@
-from flask import Flask, request, flash, render_template
+from flask import Flask, jsonify, request, flash, render_template
 import conexion
+from administrador import Administrador
 
 app = Flask(__name__)
 app.secret_key = 'LLAVE_SEGURA'  
@@ -55,6 +56,38 @@ def login():
     return Login()
 
 
+
+#------- FUNCIONALIDADES DEL ADMINISTRADOR --------#
+
+# ---> AGREGAR USUARIOS
+@app.route('/AgregarUsuarios', methods=['GET', 'POST'])
+def agregar_usuarios():
+    if request.method == 'POST':
+        rol = request.form.get('rol')
+        nombre = request.form.get('nombre')
+        apellidos = request.form.get('apellidos')
+        fecha_nac = request.form.get('fecha_nac')
+        num_doc = request.form.get('num_doc')
+        correo = request.form.get('correo')
+        telefono = request.form.get('telefono')
+        direccion = request.form.get('direccion')
+        estado = request.form.get('estado')
+
+        administrador = Administrador(rol, nombre, apellidos, fecha_nac, num_doc, correo, telefono, direccion, estado)
+        administrador.agregar_usuario()
+
+        flash('Usuario agregado correctamente.')
+        return ListadoUsuarios()
+
+    return AgregarUsuarios()
+
+
+# ---> LISTAR USUARIOS CON SU VEHICULO
+@app.route('/ListadoUsuarios')
+def listado_usuarios():
+    administrador = Administrador('', '', '', '', '', '', '', '', '')  # Crea la instancia correctamente
+    usuarios = administrador.obtener_info_usuarios()  # Llama al método correctamente
+    return render_template('ListUsuarios.html', usuarios=usuarios)
 
 
 #------- ROUTES --------#

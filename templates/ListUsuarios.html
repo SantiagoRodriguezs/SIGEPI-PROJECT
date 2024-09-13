@@ -312,99 +312,34 @@
         <div class="header-us">
             <h2>USUARIOS</h2>
         </div>
+        
+        {% for usuario in usuarios %}
         <div class="user-card">
             <div class="user-info">
                 <div>
                     <span>NOMBRE</span>
-                    <p>JUAN R</p>
+                    <p>{{ usuario.NombreUsu }}</p>
                 </div>
                 <div>
                     <span>DOCUMENTO</span>
-                    <p>1033698054</p>
+                    <p>{{ usuario.NumDocUsu }}</p>
                 </div>
                 <div>
                     <span>VEHICULO</span>
-                    <p>HJT123</p>
+                    <p>{{ usuario.MatriculaV }}</p>
                 </div>
                 <div>
                     <span>ESTADO</span>
-                    <p class="estado">ACTIVO</p>
+                    <p class="estado">{{ usuario.EstadoUsu }}</p>
                 </div>
             </div>
             <div class="button-container">
                 <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
             </div>
         </div>
-        <div class="user-card">
-            <div class="user-info">
-                <div>
-                    <span>NOMBRE</span>
-                    <p>JUAN R</p>
-                </div>
-                <div>
-                    <span>DOCUMENTO</span>
-                    <p>1033698054</p>
-                </div>
-                <div>
-                    <span>VEHICULO</span>
-                    <p>HJT123</p>
-                </div>
-                <div>
-                    <span>ESTADO</span>
-                    <p class="estado">INACTIVO</p>
-                </div>
-            </div>
-            <div class="button-container">
-                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
-            </div>
-        </div>
-        <div class="user-card">
-            <div class="user-info">
-                <div>
-                    <span>NOMBRE</span>
-                    <p>JUAN R</p>
-                </div>
-                <div>
-                    <span>DOCUMENTO</span>
-                    <p>1033698054</p>
-                </div>
-                <div>
-                    <span>VEHICULO</span>
-                    <p>HJT123</p>
-                </div>
-                <div>
-                    <span>ESTADO</span>
-                    <p class="estado">INACTIVO</p>
-                </div>
-            </div>
-            <div class="button-container">
-                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
-            </div>
-        </div>
-        <div class="user-card">
-            <div class="user-info">
-                <div>
-                    <span>NOMBRE</span>
-                    <p>JUAN R</p>
-                </div>
-                <div>
-                    <span>DOCUMENTO</span>
-                    <p>1033698054</p>
-                </div>
-                <div>
-                    <span>VEHICULO</span>
-                    <p>HJT123</p>
-                </div>
-                <div>
-                    <span>ESTADO</span>
-                    <p class="estado">ACTIVO</p>
-                </div>
-            </div>
-            <div class="button-container">
-                <button onclick="showNotification(this)">CAMBIAR ESTADO</button>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+
 
     <div class="overlay" id="overlay"></div>
 
