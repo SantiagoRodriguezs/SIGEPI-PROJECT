@@ -1,0 +1,310 @@
+<html>
+
+<head>
+    <title>Agregar Vehículo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/f718b2db3e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+        }
+
+        body {
+            background-color: #CFE7D3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #B0BDB7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            width: 100%;
+            padding: 0 10%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        /* Estilo para el logo */
+        .header .logo {
+            cursor: pointer;
+            margin-left: -90px;
+            /* Ajusta este valor según sea necesario */
+        }
+
+        .header .logo img {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s;
+        }
+
+        .header .logo img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Estilo para los enlaces de navegación */
+        .header nav {
+            flex-grow: 1;
+            /* Permite que el nav ocupe el espacio disponible */
+            display: flex;
+            justify-content: center;
+            /* Centra los enlaces en la barra de navegación */
+        }
+
+        .header .nav-links {
+            list-style: none;
+            display: flex;
+            /* Cambiado para flex */
+        }
+
+        .header .nav-links li {
+            padding: 0 20px;
+        }
+
+        .header .nav-links a {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2F9553;
+            text-decoration: none;
+        }
+
+        /* Estilo para el ícono del menú hamburguesa */
+        .bar-btn {
+            font-size: 30px;
+            cursor: pointer;
+            color: #000000;
+            z-index: 10;
+            transition: opacity 0.3s;
+            position: absolute;
+            right: 10px;
+        }
+
+        /* Estilos para el menú desplegable */
+        .nav-menu {
+            position: absolute;
+            border-radius: 20px;
+            top: 100%;
+            right: 10px;
+            width: 250px;
+            background-color: #B0BDB7;
+            list-style: none;
+            padding: 20px;
+            margin: 10px 0;
+            transform-origin: top right;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            z-index: 9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Muestra el menú cuando el checkbox está marcado */
+        #check:checked~.nav-menu {
+            transform: scale(1);
+        }
+
+        /* Estilo para los botones del menú */
+        .nav-menu li {
+            padding: 5px 0;
+        }
+
+        .nav-btn {
+            display: block;
+            width: 100%;
+            padding: 5px;
+            margin: 0;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #228B4A;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            margin-top: 80px;
+            /* To avoid overlap with the fixed header */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #d3e8d3;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #a0b0a0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container .fa-truck {
+            font-size: 80px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b0b8b4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .notification h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .notification .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .notification .buttons button {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .notification .buttons .accept {
+            background-color: #28a745;
+        }
+
+        .notification .buttons .reject {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"> <img src="{{ url_for('static', filename='img/SIGEPIXTECA.png') }}" alt="Logo de Sigepi"> </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('MenuAdmin') }}">Administrador</a></li>
+            </ul>
+        </nav>
+        <input type="checkbox" id="check" style="display: none;">
+        <label for="check" class="bar-btn">
+            <i class="fa-solid fa-bars" style="color: #000000; font-size: 30px"></i>
+        </label>
+        <ul class="nav-menu">
+            <li><a href="/AgregarUsuarios"><button class="nav-btn">AGREGAR USUARIOS</button></a></li>
+            <li><a href="/ListadoUsuarios"><button class="nav-btn">LIST. USUARIOS</button></a></li>
+            <li><a href="/AgregarVehiculos"><button class="nav-btn">AGREGAR VEHICULOS</button></a></li>
+            <li><a href="/AgregarTrailers"><button class="nav-btn">AGREGAR TRAILERS</button></a></li>
+            <li><a href="/PerfilAdministrador"><button class="nav-btn">PERFIL</button></a></li>
+            <li><a href="/Login"><button class="nav-btn">Salir</button></a></li>
+        </ul>
+    </header>
+
+    <form action="/AgregarVehiculos" method="POST"> <!-- Agrega el método y la acción del formulario -->
+    <div class="container">
+        <i class="fa-solid fa-truck"></i>
+        <input class="input-field" id="matricula" name="matricula" placeholder="PLACA" type="text" required />
+        <button class="button" type="submit" onclick="showNotification()">Agregar vehiculo</button>
+    </div>
+    </form>
+    <div class="overlay" id="overlay"></div>
+    <div class="notification" id="notification">
+        <h1>Vehículo agregado exitosamente</h1>
+        <div class="buttons">
+            <button class="accept" onclick="hideNotification()">Aceptar</button>
+        </div>
+    </div>
+    <script>
+        function showNotification() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('notification').style.display = 'block';
+        }
+
+        function hideNotification() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('notification').style.display = 'none';
+            window.location.href = '/MenuAdmin'; // Redirección a la vista de menu administrador
+        }
+    </script>
+</body>
+
+
+</html>
